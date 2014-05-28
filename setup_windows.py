@@ -4,8 +4,9 @@ def get_config():
 
     metadata, options = get_metadata_and_options()
 
-    serverKey = _winreg.OpenKey(_winreg.HKEY_LOCAL_MACHINE, options['registry_key'])
-    mysql_root, dummy = _winreg.QueryValueEx(serverKey,'Location')
+    #serverKey = _winreg.OpenKey(_winreg.HKEY_CURRENT_USER, options['registry_key'])
+    #mysql_root, dummy = _winreg.QueryValueEx(serverKey,'Location')
+    mysql_root = "C:\Program Files (x86)\MySQL\MySQL Connector C 6.0.2" 
 
     extra_objects = []
     static = enabled(options, 'static')
