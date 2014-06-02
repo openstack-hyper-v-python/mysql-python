@@ -28,7 +28,7 @@ PERFORMANCE OF THIS SOFTWARE.
 
 #include "pymemcompat.h"
 #include "structmember.h"
-#if defined(MS_WINDOWS)
+#if defined(_WIN32) || defined(_WIN64) || defined(WIN32) || defined(WIN32) || defined(MS_WIN32)
 #include <winsock2.h>
 #include <windows.h>
 #include <config-win.h>
