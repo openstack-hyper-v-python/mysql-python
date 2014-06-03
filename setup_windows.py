@@ -6,7 +6,6 @@ def get_config():
 
     #serverKey = _winreg.OpenKey(_winreg.HKEY_CURRENT_USER, options['registry_key'])
     #mysql_root, dummy = _winreg.QueryValueEx(serverKey,'Location')
-    mysql_root = "C:\Program Files (x86)\MySQL\MySQL Connector C 6.0.2" 
 
     extra_objects = []
     static = enabled(options, 'static')
@@ -16,9 +15,9 @@ def get_config():
     else:
         client = "mysqlclient"
 
-    library_dirs = [ os.path.join(mysql_root, r'lib\opt') ]
+    library_dirs = [ os.path.join(mysql_root, r'lib') ]
     libraries = [ 'kernel32', 'advapi32', 'wsock32', client ]
-    include_dirs = [ os.path.join(options['connector'], mysql_root, r'include') ]
+    include_dirs = [ os.path.join(options['connector'], r'mysql_root', r'include') ]
     extra_compile_args = [ '/Zl' ]
     
     name = "MySQL-python"
