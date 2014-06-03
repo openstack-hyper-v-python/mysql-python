@@ -18,7 +18,7 @@ def get_config():
 
     library_dirs = [ os.path.join(mysql_root, r'lib\opt') ]
     libraries = [ 'kernel32', 'advapi32', 'wsock32', client ]
-    include_dirs = [ os.path.join(mysql_root, r'include') ]
+    include_dirs = [ os.path.join(options['connector'], mysql_root, r'include') ]
     extra_compile_args = [ '/Zl' ]
     
     name = "MySQL-python"
